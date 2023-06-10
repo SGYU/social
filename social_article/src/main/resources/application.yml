@@ -1,0 +1,42 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: social_article
+  datasource:
+    url: jdbc:mysql://116.62.118.253:3306/tensquare_article?characterEncoding=utf-8
+    username: root
+    password: 5wr4c
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    async:
+      request-timeout: 60000 #设置接口超时时间
+
+# Mybatis-Plus 配置
+#mybatis-plus:
+#  #  mapper-locations: classpath:/mapper/*Mapper.xml
+#  #实体扫描，多个package用逗号或者分号分隔
+#  typeAliasesPackage: com.syu.article.pojo
+#  global-config:
+#    id-type: 1  #0:数据库ID自增   1:用户输入id
+#    db-column-underline: false
+#    refresh-mapper: true
+#    configuration:
+#      map-underscore-to-camel-case: true
+#      cache-enabled: true #配置的缓存的全局开关
+#      lazyLoadingEnabled: true #延时加载的开关
+#      multipleResultSetsEnabled: true #开启延时加载，否则按需加载属性
+#      log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+#Mybatus配置
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true #配置的缓存的全局开关
+    lazy-loading-enabled: true #延时加载的开关
+    multiple-result-sets-enabled: true #开启延时加载，否则按需加载属性
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
